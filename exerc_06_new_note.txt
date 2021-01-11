@@ -1,0 +1,21 @@
+note over browser:
+the chain of events caused by opening the page 
+https://studies.cs.helsinki.fi/exampleapp/spa 
+was ran completly
+end note
+
+note over browser:
+User writes 'something' into the text 
+field and clicks the submit button.
+Then the event handler creates a new note, 
+adds it to the notes list and rerenders 
+the note list on the page
+end note
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa {"content":"something","date":"2021-01-11T11:07:13.365Z"}
+
+note over server:
+The note 'something' is stored
+end note
+
+server-->browser: HTTP STATUS 201 {"message":"note created"}
